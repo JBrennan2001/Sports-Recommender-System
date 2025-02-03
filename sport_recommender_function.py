@@ -2,6 +2,11 @@
 import streamlit as st
 st.title('Sport Recommender App')  # Create a Title
 st.write('Welcome to my Sport Recommender App on Streamlit!')
+st.write('This application will ask you a few questions about yourself.')
+st.write('Then using data from real athletes, it will give you the Olympic sport that is most compatible to your choices and attributes.')
+
+st.sidebar
+
 
 
 
@@ -43,11 +48,7 @@ model.fit(X_train,y_train)
 
 
 def predictor():
-    # Introduction
-    st.write('Welcome to the Olympic sport recommender!')
-    st.write('This application will ask you a few questions about yourself.')
-    st.write('Then using data from real athletes, it will give you the Olympic sport that is most compatible to your choices and attributes.')
-
+    # Inputs
     height = st.slider('Enter you height in cm: ', 120, 230)
     weight = st.slider('Enter your weight in kg: ', 20, 250)
     age = st.slider('Enter your age in years: ', 10, 75)
