@@ -47,13 +47,13 @@ def predictor():
     height = st.slider('Enter you height in cm: ', 120, 230)
     weight = st.slider('Enter your weight in kg: ', 20, 250)
     age = st.slider('Enter your age in years: ', 10, 75)
-    gender = st.selectbox('What is your gender?', ['Please Select', 'Male', 'Female'])
+    gender = st.selectbox('What is your gender?', ['(Please Select)', 'Male', 'Female'])
   
     st.write('Would you prefer a more physically challenging sport (e.g. Athletics), or a less physical sport that requires a specialised skill (e.g. Shooting)?')
-    physical = st.selectbox('Which type?', ['Please Select', 'Physical', 'Non-physical'])
+    physical = st.selectbox('Which type?', ['(Please Select)', 'Physical', 'Non-physical'])
 
     st.write('Would you prefer a team sport or an individual sport?')
-    team = st.selectbox('Which type?', ['Please Select', 'Team', 'Individual'])
+    team = st.selectbox('Which type?', ['(Please Select)', 'Team', 'Individual'])
 
     
     if gender == 'Male':
@@ -73,7 +73,7 @@ def predictor():
    
 
     # Model
-    if (gender != 'Please Select') & (physical != 'Please Select') & (team != 'Please Select'):
+    if (gender != '(Please Select)') & (physical != '(Please Select)') & (team != '(Please Select)'):
       time.sleep(1)
       st.write('Thank you for answering the questions. Here are the details you entered:')
       time.sleep(.5)
