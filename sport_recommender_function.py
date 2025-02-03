@@ -86,8 +86,7 @@ def predictor():
     else:
       team = False
     time.sleep(1)
-    st.text_input('Press Enter to view your results')
-    
+
     # Model
     data = pd.DataFrame({'height_cm' : [height], 'weight_kg' : [weight], 'age' : [age], 'male' : [gender],
                'physical' : [physical], 'team' : [team]})
