@@ -4,6 +4,7 @@ st.title('Sport Recommender App')  # Create a Title
 st.write('Welcome to my Sport Recommender App on Streamlit!')
 
 
+
 # For data usage
 
 import pandas as pd
@@ -13,6 +14,7 @@ import numpy as np
 from time import time   # measure time it takes to run a model
 
 # Stuff for modelling (Decision Tree)
+sudo pip3 install scikit-learn
 # -m pip install scikit-learn
 from sklearn.tree import DecisionTreeClassifier  # the model itself
 from sklearn import tree   # visualising the model
