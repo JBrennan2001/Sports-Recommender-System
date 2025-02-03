@@ -77,7 +77,7 @@ def predictor():
     st.write('Preferred Sport Type : ', physical, ' and ', team)
     if physical == 'Physical':
       physical = True
-    elif physical = 'Non-physical':
+    elif physical == 'Non-physical':
       physical = False
     if team == 'Team':
       team = True
