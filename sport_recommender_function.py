@@ -93,6 +93,7 @@ def predictor():
     
 
     result = model.predict(data)[0]
+    st.write()
     st.write('Based on the information that you have entered, the sport we think is most suited to you is:')
     st.subheader(result)
 
