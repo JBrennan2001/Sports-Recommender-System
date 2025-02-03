@@ -51,18 +51,16 @@ def predictor():
     height = st.slider('Enter you height in cm: ', 120, 230)
     weight = st.slider('Enter your weight in kg: ', 20, 250)
     age = st.slider('Enter your age in years: ', 10, 75)
-    gender = st.selectbox('What is your gender?', ['Male', 'Female'])
+    gender = st.selectbox('What is your gender?', ['Please Select', 'Male', 'Female'])
   
     st.write('Would you prefer a more physically challenging sport (e.g. Athletics), or a less physical sport that requires a specialised skill (e.g. Shooting)?')
-    physical = st.selectbox('Which type?', ['Physical', 'Non-physical'])
+    physical = st.selectbox('Which type?', ['Please Select', 'Physical', 'Non-physical'])
 
     st.write('Would you prefer a team sport or an individual sport?')
-    team = st.selectbox('Which type?', ['Team', 'Individual'])
+    team = st.selectbox('Which type?', ['Please Select', 'Team', 'Individual'])
 
-    print('\n')
     time.sleep(1)
     st.write('Thank you for answering the questions. Here are the details you entered:')
-    print('')
     time.sleep(.5)
     st.write('Height : ', height, 'cm')
     time.sleep(.5)
@@ -73,29 +71,27 @@ def predictor():
     st.write('Gender : ', gender)
     if gender == 'Male':
       gender = True
-    else:
+    elif gender == 'Female':
       gender = False
     time.sleep(.5)
     st.write('Preferred Sport Type : ', physical, ' and ', team)
     if physical == 'Physical':
       physical = True
-    else:
+    elif physical = 'Non-physical':
       physical = False
     if team == 'Team':
       team = True
-    else:
+    elif team == 'Individual':
       team = False
     time.sleep(1)
 
     # Model
-    data = pd.DataFrame({'height_cm' : [height], 'weight_kg' : [weight], 'age' : [age], 'male' : [gender],
+    if (gender != 'Please Select') & (physical != 'Please Select') & (team != 'Please Select'):
+      data = pd.DataFrame({'height_cm' : [height], 'weight_kg' : [weight], 'age' : [age], 'male' : [gender],
                'physical' : [physical], 'team' : [team]})
-    
-
-    result = model.predict(data)[0]
-    st.write()
-    st.write('Based on the information that you have entered, the sport we think is most suited to you is:')
-    st.subheader(result)
+      result = model.predict(data)[0]
+      st.write('Based on the information that you have entered, the sport we think is most suited to you is:')
+      st.subheader(result)
 
 
 predictor()
