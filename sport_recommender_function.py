@@ -13,7 +13,7 @@ import numpy as np
 from time import time   # measure time it takes to run a model
 
 # Stuff for modelling (Decision Tree)
--m pip install scikit-learn
+# -m pip install scikit-learn
 from sklearn.tree import DecisionTreeClassifier  # the model itself
 from sklearn import tree   # visualising the model
 from sklearn.model_selection import train_test_split  # Train-test splitting
