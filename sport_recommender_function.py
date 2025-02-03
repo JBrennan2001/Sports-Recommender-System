@@ -44,112 +44,112 @@ model.fit(X_train,y_train)
 
 def predictor():
     # Introduction
-    input('Welcome to the Olympic sport recommender!')
+    st.input('Welcome to the Olympic sport recommender!')
     print('')
-    print('This application will ask you a few questions about yourself.')
-    print('Then using data from real athletes, it will give you the Olympic sport that is most compatible to your choices and attributes.')
+    st.print('This application will ask you a few questions about yourself.')
+    st.print('Then using data from real athletes, it will give you the Olympic sport that is most compatible to your choices and attributes.')
     print('')
-    input('Press Enter to start.')
+    st.input('Press Enter to start.')
 
     x=0
     while x==0:
         try:
-            height = float(input('Enter your height in cm: '))
+            height = float(st.input('Enter your height in cm: '))
             if (height >= 120) & (height <= 230):
                 x=1
             else:
-                print('Unfortunately the height you entered is out of range (120cm - 230cm). Please try again.')
+                st.print('Unfortunately the height you entered is out of range (120cm - 230cm). Please try again.')
         except:
-            print('You did not enter a valid height. Please try again. ')
+            st.print('You did not enter a valid height. Please try again. ')
             continue
     print('')
     while x==1:
         try:
-            weight = float(input('Enter your weight in kg: '))
+            weight = float(st.input('Enter your weight in kg: '))
             if (weight >=20) & (weight <= 250):
                 x=2
             else:
-                print('Unfortunately the weight you entered is out of range (20kg - 250kg). Please try again.')
+                st.print('Unfortunately the weight you entered is out of range (20kg - 250kg). Please try again.')
         except:
-            print('You did not enter a valid weight. Please try again. ')
+            st.print('You did not enter a valid weight. Please try again. ')
             continue
     print('')
     while x==2:
         try:
-            age = float(input('Enter your age in years: '))
+            age = float(st.input('Enter your age in years: '))
             if (age >= 10) & (age <= 75):
                 x=3
             else:
-                print('Unfortunately the age you entered is out of range (10 - 75). Please try again.')
+                st.print('Unfortunately the age you entered is out of range (10 - 75). Please try again.')
         except:
-            print('You did not enter a valid age. Please try again. ')
+            st.print('You did not enter a valid age. Please try again. ')
             continue
     print('')
     while x==3:
-        gender = input('Are you male or female? (Enter M or F): ').lower()
+        gender = st.input('Are you male or female? (Enter M or F): ').lower()
         if gender == 'm':
             x=4
         elif gender == 'f':
             x=4
         else:
-            print('You did not enter either M or F. Please try again.')
+            st.print('You did not enter either M or F. Please try again.')
             
     print('')
-    print('Would you prefer a more physically challenging sport (e.g. Athletics), or a less physical sport that requires a specialised skill (e.g. Shooting)?')
+    st.print('Would you prefer a more physically challenging sport (e.g. Athletics), or a less physical sport that requires a specialised skill (e.g. Shooting)?')
     while x==4:
-        physical = input('Enter P if you would prefer a physical sport. Enter N if not: ').lower()
+        physical = st.input('Enter P if you would prefer a physical sport. Enter N if not: ').lower()
         if physical == 'p':
             x=5
         elif physical == 'n':
             x=5
         else:
-            print('You did not enter either P or N. Please try again.')
+            st.print('You did not enter either P or N. Please try again.')
 
     while x==5:
-        team = input('Would you prefer a team sport or an individual sport? Enter T for team. Enter I for individual: ').lower()
+        team = st.input('Would you prefer a team sport or an individual sport? Enter T for team. Enter I for individual: ').lower()
         if team == 't':
             x=6
         elif team == 'i':
             x=6
         else:
-            print('You did not enter either T or I. Please try again.')
+            st.print('You did not enter either T or I. Please try again.')
     print('\n')
     time.sleep(1)
-    print('Thank you for answering the questions. Here are the details you entered:')
+    st.print('Thank you for answering the questions. Here are the details you entered:')
     print('')
     time.sleep(.5)
-    print(f"Height : {height}cm")
+    st.print(f"Height : {height}cm")
     time.sleep(.5)
-    print(f"Weight : {weight}kg")
+    st.print(f"Weight : {weight}kg")
     time.sleep(.5)
-    print(f"Age : {age}")
+    st.print(f"Age : {age}")
     time.sleep(.5)
     if gender == 'm':
-        print(f"Gender : Male")
+        st.print(f"Gender : Male")
         gender = True
     else:
-        print(f"Gender : Female")
+        st.print(f"Gender : Female")
         gender = False
     time.sleep(.5)
     if physical == 'p':
         physical = True
         if team == 't':
-            print(f"Preferred Sport Type : Physical and Team")
+            st.print(f"Preferred Sport Type : Physical and Team")
             team = True
         else:
-            print(f"Preferred Sport Type : Physical and Individual")
+            st.print(f"Preferred Sport Type : Physical and Individual")
             team = False
     else:
         physical = False
         if team == 't':
-            print(f"Preferred Sport Type : Non-physical and Team")
+            st.print(f"Preferred Sport Type : Non-physical and Team")
             team = True
         else:
-            print(f"Preferred Sport Type : Non-physical and Individual")
+            st.print(f"Preferred Sport Type : Non-physical and Individual")
             team = False
     time.sleep(1)
     print('\n')
-    input('Press Enter to view your results')
+    st.input('Press Enter to view your results')
     
     # Model
     data = pd.DataFrame({'height_cm' : [height], 'weight_kg' : [weight], 'age' : [age], 'male' : [gender],
