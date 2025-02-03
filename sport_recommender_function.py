@@ -71,8 +71,20 @@ def predictor():
     st.write('Age : ', age)
     time.sleep(.5)
     st.write('Gender : ', gender)
+    if gender == 'Male':
+      gender = True
+    else:
+      gender = False
     time.sleep(.5)
     st.write('Preferred Sport Type : ', physical, ' and ', team)
+    if physical == 'Physical':
+      physical = True
+    else:
+      physical = False
+    if team == 'Team':
+      team = True
+    else:
+      team = False
     time.sleep(1)
     st.text_input('Press Enter to view your results')
     
