@@ -54,7 +54,7 @@ def predictor():
     x=0
     while x==0:
         try:
-            height = float(st.text_input('Enter your height in cm: '))
+            height = st.slider('Enter you height in cm: ', 120, 230)
             if (height >= 120) & (height <= 230):
                 x=1
             else:
