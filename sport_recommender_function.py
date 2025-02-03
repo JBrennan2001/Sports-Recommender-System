@@ -44,111 +44,36 @@ model.fit(X_train,y_train)
 
 def predictor():
     # Introduction
-    st.text_input('Welcome to the Olympic sport recommender!')
-    print('')
+    st.write('Welcome to the Olympic sport recommender!')
     st.write('This application will ask you a few questions about yourself.')
     st.write('Then using data from real athletes, it will give you the Olympic sport that is most compatible to your choices and attributes.')
-    print('')
-    st.text_input('Press Enter to start.')
 
-    x=0
-    while x==0:
-        try:
-            height = st.slider('Enter you height in cm: ', 120, 230)
-            if (height >= 120) & (height <= 230):
-                x=1
-            else:
-                st.write('Unfortunately the height you entered is out of range (120cm - 230cm). Please try again.')
-        except:
-            st.write('You did not enter a valid height. Please try again. ')
-            continue
-    print('')
-    while x==1:
-        try:
-            weight = float(st.text_input('Enter your weight in kg: '))
-            if (weight >=20) & (weight <= 250):
-                x=2
-            else:
-                st.write('Unfortunately the weight you entered is out of range (20kg - 250kg). Please try again.')
-        except:
-            st.write('You did not enter a valid weight. Please try again. ')
-            continue
-    print('')
-    while x==2:
-        try:
-            age = float(st.text_input('Enter your age in years: '))
-            if (age >= 10) & (age <= 75):
-                x=3
-            else:
-                st.write('Unfortunately the age you entered is out of range (10 - 75). Please try again.')
-        except:
-            st.write('You did not enter a valid age. Please try again. ')
-            continue
-    print('')
-    while x==3:
-        gender = st.text_input('Are you male or female? (Enter M or F): ').lower()
-        if gender == 'm':
-            x=4
-        elif gender == 'f':
-            x=4
-        else:
-            st.write('You did not enter either M or F. Please try again.')
-            
-    print('')
+    height = st.slider('Enter you height in cm: ', 120, 230)
+    weight = st.slider('Enter your weight in kg: ', 20, 250)
+    age = st.slider('Enter your age in years: ', 10, 75)
+    gender = st.selectbox('What is your gender?', ['Male', 'Female'])
+  
     st.write('Would you prefer a more physically challenging sport (e.g. Athletics), or a less physical sport that requires a specialised skill (e.g. Shooting)?')
-    while x==4:
-        physical = st.text_input('Enter P if you would prefer a physical sport. Enter N if not: ').lower()
-        if physical == 'p':
-            x=5
-        elif physical == 'n':
-            x=5
-        else:
-            st.write('You did not enter either P or N. Please try again.')
+    physical = st.selectbox('Which type?', ['Physical', 'Non-physical'])
 
-    while x==5:
-        team = st.text_input('Would you prefer a team sport or an individual sport? Enter T for team. Enter I for individual: ').lower()
-        if team == 't':
-            x=6
-        elif team == 'i':
-            x=6
-        else:
-            st.write('You did not enter either T or I. Please try again.')
+    st.write('Would you prefer a team sport or an individual sport?')
+    team = st.selectbox('Which type?', ['Team', 'Individual'])
+
     print('\n')
     time.sleep(1)
     st.write('Thank you for answering the questions. Here are the details you entered:')
     print('')
     time.sleep(.5)
-    st.write(f"Height : {height}cm")
+    st.write('Height : ', height, 'cm')
     time.sleep(.5)
-    st.write(f"Weight : {weight}kg")
+    st.write('Weight : ', weight, 'kg')
     time.sleep(.5)
-    st.write(f"Age : {age}")
+    st.write('Age : ', age)
     time.sleep(.5)
-    if gender == 'm':
-        st.write(f"Gender : Male")
-        gender = True
-    else:
-        st.write(f"Gender : Female")
-        gender = False
+    st.write('Gender : ', gender)
     time.sleep(.5)
-    if physical == 'p':
-        physical = True
-        if team == 't':
-            st.write(f"Preferred Sport Type : Physical and Team")
-            team = True
-        else:
-            st.write(f"Preferred Sport Type : Physical and Individual")
-            team = False
-    else:
-        physical = False
-        if team == 't':
-            st.write(f"Preferred Sport Type : Non-physical and Team")
-            team = True
-        else:
-            st.write(f"Preferred Sport Type : Non-physical and Individual")
-            team = False
+    st.write('Preferred Sport Type : ', physical, ' and ', team)
     time.sleep(1)
-    print('\n')
     st.text_input('Press Enter to view your results')
     
     # Model
