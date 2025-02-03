@@ -5,11 +5,6 @@ st.write('Welcome to my Sport Recommender App on Streamlit!')
 st.write('This application will ask you a few questions about yourself.')
 st.write('Then using data from real athletes, it will give you the Olympic sport that is most compatible to your choices and attributes.')
 
-st.sidebar
-
-
-
-
 # For data usage
 
 import pandas as pd
