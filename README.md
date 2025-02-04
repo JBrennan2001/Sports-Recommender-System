@@ -31,3 +31,5 @@ Keith Galli uploaded the data from Olympedia on to his [Olympics Dataset reposit
 
 
 ## 3. Data Formatting
+
+Now that I located the dataset I was going to use, I needed to explore it. I used the ```pandas``` library in python to read the 
