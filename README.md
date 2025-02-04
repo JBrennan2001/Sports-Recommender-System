@@ -32,4 +32,30 @@ Keith Galli uploaded the data from Olympedia on to his [Olympics Dataset reposit
 
 ## 3. Data Formatting
 
-Now that I located the dataset I was going to use, I needed to explore it. I used the ```pandas``` library in python to read the 
+Now that I located the dataset I was going to use, I needed to explore it. I used the python pandas library to read the two csv files from Keith Galli's Olympics dataset repository. These two datasets were:
+
+(i) [athletes/bios.csv](https://github.com/KeithGalli/Olympics-Dataset/blob/master/athletes/bios.csv)
+- This csv contained the athlete biographical data which included height, weight, and date of birth.
+
+(ii) [results/results.csv](https://github.com/KeithGalli/Olympics-Dataset/blob/master/results/results.csv)
+- This csv contained the athlete results which included Olympic discipline, event, and the year that the athlete competed in the Olympics.
+
+In my python notebook, I merged these two dataframes into one on the athletes' unique ```athlete_id```. Then I needed to clean and format this combined dataframe for the purposes of my project. To summarise the formatting, the main tasks I performed were as follows.
+
+- I created a new ```age``` column by calculating the age of each athlete by subtracting the start dates of the Olympics they competed in by their dates of birth.
+- I reduced the dataframe to only contain disciplines and events that appeared in the 2020 Olympic games.
+- I created a new ```male``` column which distinguishes the gender of each athlete (True if male, False if female).
+- I created a new  ```physical``` column which distinguishes between Olympic sports I classed as physical (e.g. Athletics) and Olympic sports that I classed as non-physical (e.g. Golf).
+- I created a new ```team``` column which distinguishes between team Olympic events and non-team events.
+
+More details showing the way I cleaned and formatted the data are in my Jupyter Notebooks:
+- [Capstone Initial Dataset](https://github.com/JBrennan2001/Sports-Recommender-System/blob/main/creating_initial_dataset.ipynb)
+- [Capstone EDA](https://github.com/JBrennan2001/Sports-Recommender-System/blob/main/capstone_eda.ipynb)
+
+## 4. What age will I be at my physical peak?
+
+Once the data was cleaned and formatted I was ready to explore the data properly in order to try and answer the question 'What age will I be at my physical peak?'. The initial answer to this question appeared when I found out that the average age of every athlete in the dataset was 26. However, this wasn't accurate for various reasons, most importantly because
+- the data ranged over a 124 year time period where the average age of athletes had probably fluctuated massively, AND
+- not all Olympic disciplines should have been considered equal physically (e.g. athletics required more physicality than golf).
+
+So I explored the change in average age over time and created a v
