@@ -58,4 +58,31 @@ Once the data was cleaned and formatted I was ready to explore the data properly
 - the data ranged over a 124 year time period where the average age of athletes had probably fluctuated massively, AND
 - not all Olympic disciplines should have been considered equal physically (e.g. athletics required more physicality than golf).
 
-So I explored the change in average age over time and created a v
+So I explored the change in average age over time and created a visualisation showing the average age of athletes competing in physically demanding sports and each Olympic games from 1896-2020. The main points that I took away from this graph were that:
+- the average age did indeed fluctuate a lot over the years meaning that I needed to focus on only the most recent Olympics,
+- the average age clearly depended on the Olympic sport meaning that I needed to do more research and analysis to find out why this was the case.
+
+Following on from this I looked at the age distribution of athletes competing in certain sports at the 2020 Olympics. I created boxplots to present this information and discovered that the non-physical sports (e.g. Shooting) and the physical team sports (e.g. Beach Volleyball) had a much higher median athlete age than physical individual sports such as athletics. In my presentation I explored the reasons why this was the case, the main reason being that the athletes competing in physical individual sports were more likely to be at their physical peak. 
+
+However, the median age of athletes competing in physical individual sports was still very different depending on the sport. For example, the Swimming median age was 24 whilst the Athletics median age was 27. I realised at this point that the physical peak of these sports was different because they require different physical demands. I also realised that it isn't really possible to get an exact age for physical peak because of this. Therefore I concluded that the age of physical peak was likely in the range 24-27, but with the caveat that this was for Olympic athletes and may be different for an average person like me.
+
+More details about my exploratory data analysis and research into this question are contained in the following files:
+- [Capstone EDA](https://github.com/JBrennan2001/Sports-Recommender-System/blob/main/capstone_eda.ipynb)
+- [Capstone Presentation](https://github.com/JBrennan2001/Sports-Recommender-System/blob/main/Capstone%20Presentation.pptx)
+
+
+## 5. The Sport Recommender App
+
+The final part and the most important part of my project was creating the Sport Recommender App. For this recommender, I created a model using the Decision Tree classifier in the python scikit-learn library. This model was trained on the Olympics dataset that I had already cleaned, formatted and analysed. Specifically, it was trained on part of this [Model Dataset](https://github.com/JBrennan2001/Sports-Recommender-System/blob/main/Model%20Data.csv) which
+- only contained data from 2000-2020 (don't want the data to be outdated),
+- didn't contain any football players (the majority of men's football players at the Olympics must be 24 or below, skewing the data),
+- didn't contain athletes that had null entries in the height or weight column.
+
+The model was trained to predict the Olympic discipline of each athlete (the target) using the following six features:
+- Height
+- Weight
+- Age
+- Gender
+- Physical (is the discipline classed as physical?)
+- Team (is the event classed as a team event?)
+
