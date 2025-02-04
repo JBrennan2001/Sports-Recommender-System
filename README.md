@@ -86,3 +86,12 @@ The model was trained to predict the Olympic discipline of each athlete (the tar
 - Physical (is the discipline classed as physical?)
 - Team (is the event classed as a team event?)
 
+The final model I created had 45% accuracy on the testing data. This meant that the model predicted the correct sport for 45% of the athletes in the dataset. Considering that there were almost 50 Olympic sports to predict from, I felt that this was a pretty good accuracy score and I was happy with the result. A 45% accuracy was more than good enough for the purpose of this model which was to then be used as a recommender system for what sport someone would be best at.
+
+More details about the creation of my model are contained in the following files:
+- [Capstone Modelling](https://github.com/JBrennan2001/Sports-Recommender-System/blob/main/capstone_modelling.ipynb)
+- [Capstone Presentation](https://github.com/JBrennan2001/Sports-Recommender-System/blob/main/Capstone%20Presentation.pptx)
+
+After completing the model, I created a [python function](https://github.com/JBrennan2001/Sports-Recommender-System/blob/main/capstone_function.ipynb) that allows a user to input their own data (height, weight, age, etc.) to find out what sport the model predicts. This prediction is the sport recommendation! 
+
+I also modified this function as a [Streamlit app](https://sports-recommender-system-joseph-brennan.streamlit.app/) which is free for anyone to use!
