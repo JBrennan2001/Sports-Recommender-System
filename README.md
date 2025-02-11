@@ -8,6 +8,7 @@ This was my final project at the Digital Futures Data Analytics training pathway
 3. Data Formatting
 4. What age will I be at my physical peak?
 5. The Sport Recommender App
+6. Future Improvements
 
 
 ## 1. Introduction
@@ -95,3 +96,12 @@ More details about the creation of my model are contained in the following files
 After completing the model, I created a [python function](https://github.com/JBrennan2001/Sports-Recommender-System/blob/main/capstone_function.ipynb) that allows a user to input their own data (height, weight, age, etc.) to find out what sport the model predicts. This prediction is the sport recommendation! 
 
 I also modified this function as a [Streamlit app](https://sports-recommender-system-joseph-brennan.streamlit.app/) which is free for anyone to use!
+
+
+## 6. Future Improvements
+
+Even though I am pleased with the Sports Recommender app I have created, there are a few things I would like to improve about it in the future.
+
+- I want to modify the app so that it outputs the top three sports you would be best at rather than just one. This means that if the user wants to start a new sport that they would be good at, they won't be limited to only one option. For example, if I run the app hoping to find a new sport to try but it outputs a sport I have already played, I would want a second option. If the program outputs a top 3 then I would have multiple options in case I am unhappy with the first one.
+- I could explore adding more features. However, there is limited athlete information available beyond what I have already used for this model. One feature I didn't use in my model is nationality, so I could look into implementing that into my model. However, I'm unsure whether using nationality as a feature is a good idea for the purposes of this model.
+- If height and weight data becomes available for the 2024 Olympic athletes (whether that is on Olympedia or elsewhere), I will add this data to my model so that it is fully up to date.
